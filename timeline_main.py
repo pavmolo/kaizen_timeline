@@ -4,6 +4,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
 from pandas import Timestamp
+import plotly.express as px
+
 
 uploaded_file = st.file_uploader("Выберите XLSX файл", accept_multiple_files=False)
 project_name = st.text_input("Установите название проекта")
@@ -109,3 +111,10 @@ if uploaded_file:
   plt.savefig('gantt.png', facecolor='#36454F')
   
   st.pyplot(plt)
+
+
+  df.sort_values(by=['Start', 'Finish'], ascending = True, inplace = True)
+  fig = px.timeline(df, x_start="Start", x_end="Finish", y="Task", text='Task') # textposition argument not possible
+  fig.update_yaxes(autorange="reversed", tickvals=[i for i in range(len(df))], ticktext=['' for i in range(len(df))])
+  fig.update_traces(textposition='outside')
+  fig.show()
