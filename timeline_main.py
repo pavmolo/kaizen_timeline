@@ -6,6 +6,7 @@ from matplotlib.patches import Patch
 from pandas import Timestamp
 
 uploaded_file = st.file_uploader("Выберите XLSX файл", accept_multiple_files=False)
+project_name = st.text_input("Установите название проекта")
 if uploaded_file:
   data = pd.read_excel(uploaded_file)
     ##### DATA PREP ##### 
@@ -71,8 +72,8 @@ if uploaded_file:
   ax.spines['top'].set_visible(False)
   ax.spines['bottom'].set_color('w')
 
-
-  plt.suptitle('PROJECT XYZ', color='w')
+  
+  plt.suptitle(project_name, color='w')
 
   ##### LEGENDS #####
   legend_elements = [Patch(facecolor='#E64646', label='Marketing'),
