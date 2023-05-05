@@ -114,7 +114,7 @@ if uploaded_file:
 
 
   df.sort_values(by=['Start', 'Finish'], ascending = True, inplace = True)
-  fig = px.timeline(df, x_start="Start", x_end="Finish", y="Task", text='Task') # textposition argument not possible
+  fig = px.timeline(df, x_start="Start", x_end="End", y="Task", text='Task') # textposition argument not possible
   fig.update_yaxes(autorange="reversed", tickvals=[i for i in range(len(df))], ticktext=['' for i in range(len(df))])
   fig.update_traces(textposition='outside')
   fig.show()
