@@ -113,7 +113,7 @@ if uploaded_file:
   st.pyplot(plt)
 
 
-  data.sort_values(by=['Start', 'Finish'], ascending = True, inplace = True)
+  data.sort_values(by=['Start', 'End'], ascending = True, inplace = True)
   fig = px.timeline(data, x_start="Start", x_end="End", y="Task", text='Task') # textposition argument not possible
   fig.update_yaxes(autorange="reversed", tickvals=[i for i in range(len(data))], ticktext=['' for i in range(len(data))])
   fig.update_traces(textposition='outside')
