@@ -35,7 +35,7 @@ if uploaded_file:
   df['color'] = df.apply(color, axis=1)
 
   ##### PLOT #####
-  fig, (ax, ax1) = plt.subplots(2, figsize=(16,6), gridspec_kw={'height_ratios':[6, 1]}, facecolor='#36454F')
+  fig, (ax, ax1) = plt.subplots(2, figsize=(32,18), gridspec_kw={'height_ratios':[6, 1]}, facecolor='#36454F')
   ax.set_facecolor('#36454F')
   ax1.set_facecolor('#36454F')
   # bars
