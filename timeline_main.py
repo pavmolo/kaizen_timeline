@@ -107,4 +107,4 @@ if uploaded_file:
 
   plt.savefig('gantt.png', facecolor='#36454F')
   
-  st.pyplot(ax)
+  st.pyplot(plt)
