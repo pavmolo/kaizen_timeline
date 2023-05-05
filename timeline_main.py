@@ -106,6 +106,6 @@ if uploaded_file:
   ax.axvline(today.days, color='w', lw=1, alpha=0.7)
   ax.text(today.days, len(df)+0.5, 'Today', ha='center', color='w')
 
-  plt.savefig('gantt.png', facecolor='#36454F', dpi=1000)
+  plt.savefig('gantt.png', facecolor='#36454F', dpi=500)
   
   st.pyplot(plt)
